@@ -4,7 +4,7 @@
 	ini_set('display_errors', 'on');
 	error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
 	
-	define('SYSTEM_EURL' , '/OOPHPLoginSystem/'); //css /js
+	define('SYSTEM_EURL' , '/Sistema-Integral/'); //css /js
 	define('SYSTEM_URL' , $_SERVER['DOCUMENT_ROOT'] . SYSTEM_EURL); //php
 	
 	$GLOBALS['config'] = array(
