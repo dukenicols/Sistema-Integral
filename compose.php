@@ -14,7 +14,7 @@
 	Input::get('post_id')? $mode = 'edit' : $mode = '';
 	if(Input::get('query')){
 		print $services->getTags(Input::get('query'));
-		//TODO findout how the heck this plugin works
+		
 		exit();
 	} 
 	
@@ -24,7 +24,7 @@
 	
 	require_once(SYSTEM_URL.'views/header.php');
 	print '<link href="'.SYSTEM_EURL.'css/style2.css" rel="stylesheet" />';
-	print '<link rel="stylesheet" hreh="'. SYSTEM_EURL.'js/bootstrap.datetimepicker/css/bootstrap-datetimepicker.min.css"></script>';
+	
 	?>
 	<div class="page-aside email">
       <div class="fixed nano nscroller">
@@ -162,10 +162,7 @@
 								    	  	<option value="<?php print str_pad($i, 2, "0", STR_PAD_LEFT); ?>" <?php print $selected; ?>><?php print str_pad($i, 2, "0", STR_PAD_LEFT); ?></option>
 								    	  <?php } ?>
 								    	  </select>
-								    	&nbsp;<div class="input-group date datetime col-md5 col-xs-7" data-date="2014-06-09" data-date-format="yyyy-mm-dd">
-								    	<input class="form-control" size="16" type="text" value="" style="hidden" readonly>
-								    		<span class="input-group-addon btn btn-primary"><span class="glyphicon glyphicon-th"></span></span>
-								        	</div>
+								    	&nbsp;
 								    
 								    </div>
 								    
@@ -198,7 +195,7 @@
 
 	<script type="text/javascript" src="<?php echo SYSTEM_EURL;?>js/jquery.js"></script>
   	<script type="text/javascript" src="<?php echo SYSTEM_EURL;?>js/main.js"></script>
-  	<script type="text/javascript" src="<?php echo SYSTEM_EURL;?>js/bootstrap.datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+  	
   	<script type="text/javascript" src="<?php echo SYSTEM_EURL;?>js/jquery.nanoscroller/jquery.nanoscroller.js"></script>
 	<script type="text/javascript" src="<?php echo SYSTEM_EURL;?>js/behaviour/general.js"></script>
  	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js" type="text/javascript"></script>

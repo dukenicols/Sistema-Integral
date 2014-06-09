@@ -35,17 +35,10 @@
 		}
 		public function getTags($item)
 		{
-			$db_obj = $this->_db->query("SELECT label FROM llx_sm_tags",array("label","LIKE","'%".$item."%'"));
+			$db_obj = $this->_db->query("SELECT label as value FROM llx_sm_tags",array("label","LIKE","'%".$item."%'"));
 			
-			return json_encode($db_obj->results());
-			die();
-	$response = '[';
-			foreach ($db_obj->results() as $r){
-	
-				$response .= '{value: "'.$r->label.'"}';
-			}
-		$response .=']';
-return $response;
+			$array = array('suggestions' => $db_obj->results());
+			return json_encode($array);
 			
 		}
 		

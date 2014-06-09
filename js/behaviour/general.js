@@ -7,7 +7,7 @@ var App = function () {
     nestableLists: true,
     hiddenElements: true,
     bootstrapSwitch:true,
-    dateTime:true,
+    
     select2:true,
     tags:true,
     slider:true
@@ -1537,10 +1537,7 @@ var App = function () {
         $('.switch').bootstrapSwitch();
       }
       
-      /*DateTime Picker*/
-      if(config.dateTime){
-        $(".datetime").datetimepicker();
-      }
+      
       
       /*Select2*/
       if(config.select2){

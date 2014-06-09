@@ -244,25 +244,13 @@
      	
      	
      });
-     var countries = [
-   { value: 'ENGAGEMENT - FRASES' },
-   { value: 'ENGAGEMENT - JUEGOS' },
-   { value: 'BRAND - PROMOCIONES' },
-   { value: 'BRAND - CLAROCLUB' },
-   { value: 'BRAND - SCL' },
-   { value: 'ENGAGEMENT' },
-   
-   { value: 'ENGAGEMENT - ANIMALES' }
-];
-var test;
-$.getJSON("compose.php?query=e", function(data) {
-	test = data;
-});
+  
 var tag_text;
 $('#tag-input').autocomplete({
-    serviceUrl: test,
-    onSearch: function (suggestion) {
+    serviceUrl: 'compose.php',
+    onSelect: function (suggestion) {
         tag_text = suggestion.value;
+        
     }
 });
     
