@@ -244,15 +244,32 @@
      	
      	
      });
-     var tag_text = '';
-     $('#tag-input').change(function(){
-        $('#tags-error').hide();
-     	tag_text = $('#tag-input').val();
-     });
+     var countries = [
+   { value: 'ENGAGEMENT - FRASES' },
+   { value: 'ENGAGEMENT - JUEGOS' },
+   { value: 'BRAND - PROMOCIONES' },
+   { value: 'BRAND - CLAROCLUB' },
+   { value: 'BRAND - SCL' },
+   { value: 'ENGAGEMENT' },
+   
+   { value: 'ENGAGEMENT - ANIMALES' }
+];
+var test;
+$.getJSON("compose.php?query=e", function(data) {
+	test = data;
+});
+var tag_text;
+$('#tag-input').autocomplete({
+    serviceUrl: test,
+    onSearch: function (suggestion) {
+        tag_text = suggestion.value;
+    }
+});
+    
      //TAGS END  
  	 
        //DESCRIPTION FIELD
-       
+      
        
          
         
@@ -298,7 +315,7 @@
 	    	if(imagen_url.length == 0)
 	    	{
 	    	
-	    	var approval = confirm('No has subido una imágen, ¿Deseas continuar?')
+	    	var approval = confirm('No has subido una imágen, ¿Deseas continuar?');
 	    	
 	    	
 	    	  
@@ -360,20 +377,7 @@
         });
         
         
-         var availableTags = [
-"ENGAGEMENT - FRASES",
-"ENGAGEMENT - ANIMALES",
-"ENGAGEMENT - JUEGOS",
-"BRAND - PROMOCIONES",
-"BRAND - CLAROCLUB",
-"BRAND - SCL",
-"ENGAGEMENT"
 
-
-];
-$( "#tag-input" ).autocomplete({
-source: availableTags
-});
         
  
 /*EDIT MODE ONLY */        
@@ -542,7 +546,7 @@ $('#minutes option[value="'+ i +'"]').prop("selected", true);
 	    function sendFile()
     	{
 	        $.ajaxFileUpload({
-	            url:'ajax_files/ajaxfileupload.php', 
+	            url:'ajax_files/fileupload.ajax.php', 
 	            secureuri:false,
 	            fileElementId:'fileupload',
 	            dataType: "json",
@@ -560,7 +564,7 @@ $('#minutes option[value="'+ i +'"]').prop("selected", true);
 	            },
 	            error: function (data, status, e)
 	            {
-	                alert(e);
+	                alert(e.JSONparse);
 	                
 	            }
 	        });
@@ -574,7 +578,6 @@ $('#minutes option[value="'+ i +'"]').prop("selected", true);
 	    
 	    //DESCRIPTION FIELD
 	     
-	   
 
  
 		

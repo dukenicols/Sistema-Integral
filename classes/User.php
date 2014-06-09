@@ -36,7 +36,7 @@
 				throw new Exception("There was a problem updating your details");
 			}
 		}
-
+		
 		public function create($fields = array()) {
 			if (!$this->_db->insert('users', $fields)) {
 				throw new Exception("There was a problem creating your account");

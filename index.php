@@ -10,6 +10,7 @@
 		
 	//Verificar tipo de Usuario
 	$userType = $user->getUserType();
+	
 
 	//Llama todas la parte de arriba incluyendo los dos menus
 	

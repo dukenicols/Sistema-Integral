@@ -1539,7 +1539,7 @@ var App = function () {
       
       /*DateTime Picker*/
       if(config.dateTime){
-        $(".datetime").datetimepicker({autoclose: true});
+        $(".datetime").datetimepicker();
       }
       
       /*Select2*/
